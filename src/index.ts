@@ -83,7 +83,7 @@ class Nums {
     return new Nums(result);
   }
 
-  public MACD(
+  public MACD_MA(
     fast: number,
     slow: number,
     size: number,
@@ -100,7 +100,7 @@ class Nums {
     };
   }
 
-  public EMACD(
+  public MACD(
     fast: number,
     slow: number,
     size: number,

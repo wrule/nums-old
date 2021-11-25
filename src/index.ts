@@ -147,12 +147,26 @@ class Nums {
     );
   }
 
-  public IsVBottom(index: number, size: number = 1) {
-
+  /**
+   * 是否是V形反转
+   * @param index 
+   * @param size 
+   * @returns 
+   */
+  public IsVPattern(index: number, size: number = 1) {
+    return this.IsFall(index - size + 2, index - 2 * size + 2) &&
+      this.IsRise(index + 1, index - size + 1);
   }
 
-  public IsATop(index: number, size: number = 1) {
-
+  /**
+   * 是否是A形反转
+   * @param index 
+   * @param size 
+   * @returns 
+   */
+  public IsAPattern(index: number, size: number = 1) {
+    return this.IsRise(index - size + 2, index - 2 * size + 2) &&
+      this.IsFall(index + 1, index - size + 1);
   }
 }
 

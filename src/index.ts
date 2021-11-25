@@ -153,9 +153,13 @@ class Nums {
    * @param size 
    * @returns 
    */
-  public IsVPattern(index: number, size: number = 2) {
-    return this.IsFall(index - size + 2, index - 2 * size + 2) &&
-      this.IsRise(index + 1, index - size + 1);
+  public IsVPattern(
+    index: number,
+    sizeFall: number = 2,
+    sizeRise: number = 2,
+  ) {
+    return this.IsFall(index + 2 - sizeRise, index + 2 - sizeRise - sizeFall) &&
+      this.IsRise(index + 1, index + 1 - sizeRise);
   }
 
   /**
@@ -164,9 +168,13 @@ class Nums {
    * @param size 
    * @returns 
    */
-  public IsAPattern(index: number, size: number = 2) {
-    return this.IsRise(index - size + 2, index - 2 * size + 2) &&
-      this.IsFall(index + 1, index - size + 1);
+  public IsAPattern(
+    index: number,
+    sizeRise: number = 2,
+    sizeFall: number = 2,
+  ) {
+    return this.IsRise(index + 2 - sizeFall, index + 2 - sizeFall - sizeRise) &&
+      this.IsFall(index + 1, index + 1 - sizeFall);
   }
 }
 

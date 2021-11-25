@@ -116,6 +116,44 @@ class Nums {
       MACD: new Nums(MACDNums),
     };
   }
+
+  /**
+   * 判断数据是否下降
+   * @param end 
+   * @param start 
+   */
+  public IsFall(end?: number, start?: number) {
+    const sliceNums = this.slice(end, start).nums;
+    if (sliceNums.length < 2) {
+      return false;
+    }
+    return sliceNums.every(
+      (num, index) => (index === 0 || num <= sliceNums[index - 1])
+    );
+  }
+
+  /**
+   * 判断数据是否上升
+   * @param end 
+   * @param start 
+   */
+  public IsRise(end?: number, start?: number) {
+    const sliceNums = this.slice(end, start).nums;
+    if (sliceNums.length < 2) {
+      return false;
+    }
+    return sliceNums.every(
+      (num, index) => (index === 0 || num >= sliceNums[index - 1])
+    );
+  }
+
+  public IsVBottom(index: number, size: number = 1) {
+
+  }
+
+  public IsATop(index: number, size: number = 1) {
+
+  }
 }
 
 export

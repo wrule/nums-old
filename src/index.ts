@@ -128,7 +128,7 @@ class Nums {
       return false;
     }
     return sliceNums.every(
-      (num, index) => (index === 0 || num <= sliceNums[index - 1])
+      (num, index) => (index === 0 || num < sliceNums[index - 1])
     );
   }
 
@@ -143,7 +143,7 @@ class Nums {
       return false;
     }
     return sliceNums.every(
-      (num, index) => (index === 0 || num >= sliceNums[index - 1])
+      (num, index) => (index === 0 || num > sliceNums[index - 1])
     );
   }
 
@@ -153,7 +153,7 @@ class Nums {
    * @param size 
    * @returns 
    */
-  public IsVPattern(index: number, size: number = 1) {
+  public IsVPattern(index: number, size: number = 2) {
     return this.IsFall(index - size + 2, index - 2 * size + 2) &&
       this.IsRise(index + 1, index - size + 1);
   }
@@ -164,7 +164,7 @@ class Nums {
    * @param size 
    * @returns 
    */
-  public IsAPattern(index: number, size: number = 1) {
+  public IsAPattern(index: number, size: number = 2) {
     return this.IsRise(index - size + 2, index - 2 * size + 2) &&
       this.IsFall(index + 1, index - size + 1);
   }

@@ -38,12 +38,23 @@ class Nums {
     return Math.max(...this.slice(end, start).nums);
   }
 
-  public first() {
+  public get first() {
     return this.nums[0];
   }
 
-  public last() {
+  public get last() {
     return this.nums[this.nums.length - 1];
+  }
+
+  public get length() {
+    return this.nums.length;
+  }
+
+  public randomRange(size: number) {
+    const nsize = size > this.length ? this.length : size;
+    const start = Math.floor(Math.random() * (this.length - nsize + 1));
+    const end = start + size;
+    return this.slice(end, start);
   }
 
   public sum(end?: number, start?: number) {

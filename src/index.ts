@@ -38,6 +38,14 @@ class Nums {
     return Math.max(...this.slice(end, start).nums);
   }
 
+  public first() {
+    return this.nums[0];
+  }
+
+  public last() {
+    return this.nums[this.nums.length - 1];
+  }
+
   public sum(end?: number, start?: number) {
     const slice = this.slice(end, start).nums;
     let sum = 0;

@@ -50,6 +50,10 @@ class Nums {
     return this.nums.length;
   }
 
+  public reverse() {
+    return new Nums(this.nums.reverse());
+  }
+
   public randomRange(size: number) {
     let nsize = size < 0 ? 0 : size;
     nsize = nsize > this.length ? this.length : nsize;

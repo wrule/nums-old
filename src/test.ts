@@ -1,4 +1,4 @@
 import { nums } from './index';
 
-const v = nums([3, 4, 6, 5, 6]);
-console.log(v.IsVPattern(4));
+const v = nums([1, 2, 3, 4]);
+console.log(v.randomRange(-2));

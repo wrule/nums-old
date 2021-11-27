@@ -51,9 +51,10 @@ class Nums {
   }
 
   public randomRange(size: number) {
-    const nsize = size > this.length ? this.length : size;
+    let nsize = size < 0 ? 0 : size;
+    nsize = nsize > this.length ? this.length : nsize;
     const start = Math.floor(Math.random() * (this.length - nsize + 1));
-    const end = start + size;
+    const end = start + nsize;
     return this.slice(end, start);
   }
 

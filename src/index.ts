@@ -90,6 +90,10 @@ class Nums {
     return varianceSum / slice.length;
   }
 
+  public standardDeviation(end?: number, start?: number) {
+    return Math.sqrt(this.variance(end, start));
+  }
+
   public concat(nums: Nums) {
     return new Nums(this.nums.concat(nums.nums));
   }

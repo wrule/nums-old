@@ -80,6 +80,16 @@ class Nums {
     return sum / slice.length;
   }
 
+  public variance(end?: number, start?: number) {
+    const slice = this.slice(end, start).nums;
+    let sum = 0;
+    slice.forEach((num) => sum += num);
+    const avg = sum / slice.length;
+    let varianceSum = 0;
+    slice.forEach((num) => varianceSum += Math.pow(num - avg, 2));
+    return varianceSum / slice.length;
+  }
+
   public concat(nums: Nums) {
     return new Nums(this.nums.concat(nums.nums));
   }

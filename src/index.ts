@@ -193,6 +193,11 @@ class Nums {
     return this.nums.pop();
   }
 
+  /**
+   * 在数组范围内随机选取开始结束索引
+   * @param size 区间大小
+   * @returns 结束索引，开始索引
+   */
   public randomRangeEndStart(size: number) {
     let nsize = size < 0 ? 0 : size;
     nsize = nsize > this.length ? this.length : nsize;
@@ -201,6 +206,11 @@ class Nums {
     return [end, start];
   }
 
+  /**
+   * 在数组范围内随机选取切片
+   * @param size 区间大小
+   * @returns 切片
+   */
   public randomRange(size: number) {
     return this.slice(...this.randomRangeEndStart(size));
   }

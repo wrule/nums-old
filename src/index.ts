@@ -74,6 +74,16 @@ class Nums {
   }
 
   /**
+   * 数组求和
+   * @returns 和
+   */
+  public sum() {
+    let sum = 0;
+    this.nums.forEach((num) => sum += num);
+    return sum;
+  }
+
+  /**
    * 数组第一个数字
    */
   public get first() {
@@ -110,12 +120,7 @@ class Nums {
     return [end, start];
   }
 
-  public sum(end?: number, start?: number) {
-    const slice = this.slice(end, start).nums;
-    let sum = 0;
-    slice.forEach((num) => sum += num);
-    return sum;
-  }
+
 
   public avg(end?: number, start?: number) {
     const slice = this.slice(end, start).nums;

@@ -113,6 +113,24 @@ class Nums {
   }
 
   /**
+   * 从头部获取元素列表
+   * @param size 元素个数
+   * @returns 元素列表
+   */
+  public head(size: number) {
+    return this.slice(size, 0);
+  }
+
+  /**
+   * 从尾部获取元素列表
+   * @param size 元素个数
+   * @returns 元素列表
+   */
+  public tail(size: number) {
+    return this.slice(this.nums.length, this.nums.length - size);
+  }
+
+  /**
    * 数组第一个数字
    */
   public get first() {
@@ -161,7 +179,7 @@ class Nums {
     const nsize = this.normalizeSize(size);
     return new Nums(
       this.nums.map((num, index) =>
-        this.avg(index + 1, index - nsize + 1)
+        this.slice(index + 1, index - nsize + 1).avg()
       )
     );
   }

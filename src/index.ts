@@ -1,12 +1,22 @@
 
+/**
+ * Nums类
+ */
 export
 class Nums {
+  /**
+   * 构造函数
+   * @param nums 数组
+   */
   public constructor(
     private nums: number[],
   ) { }
 
+  /**
+   * 数组访问器
+   */
   public get Nums() {
-    return this.nums.slice();
+    return this.nums;
   }
 
   private normalizeEndStart(
@@ -220,6 +230,11 @@ class Nums {
   }
 }
 
+/**
+ * 便捷访问工厂函数
+ * @param nums 数组
+ * @returns Nums对象
+ */
 export
 function nums(nums: number[]) {
   return new Nums(nums);

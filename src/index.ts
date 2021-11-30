@@ -57,22 +57,39 @@ class Nums {
     return new Nums(this.nums.slice(istart, iend));
   }
 
-  public min(end?: number, start?: number) {
-    return Math.min(...this.slice(end, start).nums);
+  /**
+   * 获取最小值
+   * @returns 最小值
+   */
+  public min() {
+    return Math.min(...this.nums);
   }
 
-  public max(end?: number, start?: number) {
-    return Math.max(...this.slice(end, start).nums);
+  /**
+   * 获取最大值
+   * @returns 最大值
+   */
+  public max() {
+    return Math.max(...this.nums);
   }
 
+  /**
+   * 数组第一个数字
+   */
   public get first() {
     return this.nums[0];
   }
 
+  /**
+   * 数组最后一个数字
+   */
   public get last() {
     return this.nums[this.nums.length - 1];
   }
 
+  /**
+   * 数组长度
+   */
   public get length() {
     return this.nums.length;
   }

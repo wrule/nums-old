@@ -84,6 +84,35 @@ class Nums {
   }
 
   /**
+   * 数组求平均值
+   * @returns 平均值
+   */
+  public avg() {
+    let sum = 0;
+    this.nums.forEach((num) => sum += num);
+    return sum / this.nums.length;
+  }
+
+  /**
+   * 数组求方差
+   * @returns 方差
+   */
+  public variance() {
+    const avg = this.avg();
+    let varianceSum = 0;
+    this.nums.forEach((num) => varianceSum += Math.pow(num - avg, 2));
+    return varianceSum / this.nums.length;
+  }
+
+  /**
+   * 数组求标准差
+   * @returns 标准差
+   */
+  public standardDeviation() {
+    return Math.sqrt(this.variance());
+  }
+
+  /**
    * 数组第一个数字
    */
   public get first() {
@@ -118,29 +147,6 @@ class Nums {
     const start = Math.floor(Math.random() * (this.length - nsize + 1));
     const end = start + nsize;
     return [end, start];
-  }
-
-
-
-  public avg(end?: number, start?: number) {
-    const slice = this.slice(end, start).nums;
-    let sum = 0;
-    slice.forEach((num) => sum += num);
-    return sum / slice.length;
-  }
-
-  public variance(end?: number, start?: number) {
-    const slice = this.slice(end, start).nums;
-    let sum = 0;
-    slice.forEach((num) => sum += num);
-    const avg = sum / slice.length;
-    let varianceSum = 0;
-    slice.forEach((num) => varianceSum += Math.pow(num - avg, 2));
-    return varianceSum / slice.length;
-  }
-
-  public standardDeviation(end?: number, start?: number) {
-    return Math.sqrt(this.variance(end, start));
   }
 
   public concat(nums: Nums) {

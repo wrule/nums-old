@@ -46,6 +46,12 @@ class Nums {
     return size < 1 ? 1 : Math.floor(size);
   }
 
+  /**
+   * 切片
+   * @param end 结束索引
+   * @param start 开始索引
+   * @returns 切片
+   */
   public slice(end?: number, start?: number) {
     const [iend, istart] = this.normalizeEndStart(end, start);
     return new Nums(this.nums.slice(istart, iend));

@@ -19,13 +19,19 @@ class Nums {
     return this.nums;
   }
 
-  private normalizeEndStart(
+  /**
+   * 规范化end，start索引
+   * @param end end索引
+   * @param start start索引
+   * @returns 规范化之后的end，start索引
+   */
+  public normalizeEndStart(
     end?: number,
     start?: number,
   ) {
     return [
-      (end != null) ? end : this.nums.length,
-      (start != null && start >= 0) ? start : 0,
+      end != null && end >= 0 ? end : this.nums.length,
+      start != null && start >= 0 ? start : 0,
     ];
   }
 

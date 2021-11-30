@@ -35,7 +35,12 @@ class Nums {
     ];
   }
 
-  private normalizeSize(
+  /**
+   * 规范化size
+   * @param size size
+   * @returns 规范化之后的size
+   */
+  public normalizeSize(
     size: number,
   ) {
     return size < 1 ? 1 : Math.floor(size);

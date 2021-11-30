@@ -131,6 +131,15 @@ class Nums {
   }
 
   /**
+   * 从尾部获取元素列表（倒叙）
+   * @param size 元素个数
+   * @returns 元素列表
+   */
+  public tailReverse(size: number) {
+    return this.slice(this.nums.length, this.nums.length - size).reverse();
+  }
+
+  /**
    * 数组第一个数字
    */
   public get first() {
@@ -151,8 +160,37 @@ class Nums {
     return this.nums.length;
   }
 
+  /**
+   * 获取倒序的数组
+   * @returns 倒序的数组
+   */
   public reverse() {
     return new Nums(this.nums.reverse());
+  }
+
+  /**
+   * 拼接Nums
+   * @param nums 新的Nums
+   * @returns 拼接之后的Nums
+   */
+  public concat(nums: Nums) {
+    return new Nums(this.nums.concat(nums.nums));
+  }
+
+  /**
+   * 推入数字
+   * @param num 数字
+   */
+  public push(...items: number[]) {
+    return this.nums.push(...items);
+  }
+
+  /**
+   * 弹出数字
+   * @returns 数字
+   */
+  public pop() {
+    return this.nums.pop();
   }
 
   public randomRange(size: number) {
@@ -165,14 +203,6 @@ class Nums {
     const start = Math.floor(Math.random() * (this.length - nsize + 1));
     const end = start + nsize;
     return [end, start];
-  }
-
-  public concat(nums: Nums) {
-    return new Nums(this.nums.concat(nums.nums));
-  }
-
-  public push(num: number) {
-    this.nums.push(num);
   }
 
   public MA(size: number) {

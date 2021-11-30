@@ -193,16 +193,16 @@ class Nums {
     return this.nums.pop();
   }
 
-  public randomRange(size: number) {
-    return this.slice(...this.randomRangeEndStart(size));
-  }
-
   public randomRangeEndStart(size: number) {
     let nsize = size < 0 ? 0 : size;
     nsize = nsize > this.length ? this.length : nsize;
     const start = Math.floor(Math.random() * (this.length - nsize + 1));
     const end = start + nsize;
     return [end, start];
+  }
+
+  public randomRange(size: number) {
+    return this.slice(...this.randomRangeEndStart(size));
   }
 
   public MA(size: number) {

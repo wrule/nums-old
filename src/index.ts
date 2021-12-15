@@ -169,7 +169,7 @@ class Nums {
   }
 
   /**
-   * 随机抽取新的数组
+   * 随机抽取新的数组（允许重复）
    * @returns 新的数组
    */
   public randomRepeat() {    
@@ -180,6 +180,21 @@ class Nums {
         ]
       )
     );
+  }
+
+  /**
+   * 随机抽取新的数组（不重复）
+   * @returns 新的数组
+   */
+  public random() {
+    const result: number[] = [];
+    const list = this.nums.slice();
+    while (list.length > 0) {
+      result.push(
+        ...list.splice(Math.floor(Math.random() * list.length), 1),
+      );
+    }
+    return nums(result);
   }
 
   /**

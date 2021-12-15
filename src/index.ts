@@ -182,6 +182,22 @@ class Nums {
     );
   }
 
+  public add(num: number) {
+    return nums(this.nums.map((item) => item + num));
+  }
+
+  public sub(num: number) {
+    return nums(this.nums.map((item) => item - num));
+  }
+
+  public mul(num: number) {
+    return nums(this.nums.map((item) => item * num));
+  }
+
+  public div(num: number) {
+    return nums(this.nums.map((item) => item / num));
+  }
+
   /**
    * 随机抽取新的数组（不重复）
    * @returns 新的数组

@@ -169,6 +169,20 @@ class Nums {
   }
 
   /**
+   * 随机抽取新的数组
+   * @returns 新的数组
+   */
+  public random() {    
+    return nums(
+      this.nums.map(
+        () => this.nums[
+          Math.floor(Math.random() * this.nums.length)
+        ]
+      )
+    );
+  }
+
+  /**
    * 拼接Nums
    * @param nums 新的Nums
    * @returns 拼接之后的Nums

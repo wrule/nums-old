@@ -172,7 +172,7 @@ class Nums {
    * 随机抽取新的数组
    * @returns 新的数组
    */
-  public random() {    
+  public randomRepeat() {    
     return nums(
       this.nums.map(
         () => this.nums[
